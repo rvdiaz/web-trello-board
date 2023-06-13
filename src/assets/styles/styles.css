@@ -1,0 +1,22 @@
+body,html,#root {
+    height: 100%;
+    background-color: #0079bf;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+.baseContainer {
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.boardContainer {
+    background-color: #0079bf;
+    border: 1px solid white;
+    height: 90%;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
