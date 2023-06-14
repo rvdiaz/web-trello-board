@@ -1,14 +1,21 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { Card } from './card/Card';
 
-export const CardsList = () => {
-  const {list}=useSelector((state)=>state.list);
-  
+export const CardsList = (props) => {
+  const {listCards}=props;
   return (
-    <div>
-      {list.map((item,index)=>(
-        <h1 key={index}>{item}</h1>
-      ))}
+    <div className='cardWrapper'>
+        <div className='cardContainer'>
+        {listCards.map((card)=>(
+          <Card
+            photo={card.photo}
+            name={card.name}
+            job={card.job}
+            key={card.id}
+            id={card.id}
+          />
+      ))} 
+      </div>
     </div>
   )
 }

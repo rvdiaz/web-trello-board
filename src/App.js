@@ -1,10 +1,10 @@
 import { BaseBoard } from "./components/container/BaseBoard";
-import { CardsList } from "./components/ui/CardsList";
+import { List } from "./components/ui/List";
 
 function App() {
   return (
     <BaseBoard>
-      <CardsList/>
+      <List/>
     </BaseBoard>
   );
 }

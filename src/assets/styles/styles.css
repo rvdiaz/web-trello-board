@@ -20,3 +20,16 @@ body,html,#root {
     overflow-x: scroll;
     overflow-y: hidden;
 }
+.listWrapper {
+    display: flex;
+    height: 100%;
+}
+.cardWrapper {
+    padding: 20px;
+    margin: 0 30px;
+}
+.cardContainer{
+    height: 100%;
+    overflow:auto ;
+    width: 300px;
+}
