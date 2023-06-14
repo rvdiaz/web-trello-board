@@ -2,9 +2,12 @@ import React from 'react'
 import { Card } from './card/Card';
 
 export const CardsList = (props) => {
-  const {listCards}=props;
+  const {listCards,title}=props;
   return (
     <div className='cardWrapper'>
+        <h2 className='cardListTitle'>
+          {title}
+        </h2>
         <div className='cardContainer'>
         {listCards.map((card)=>(
           <Card

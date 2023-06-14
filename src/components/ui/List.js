@@ -10,12 +10,14 @@ export const List = () => {
   useEffect(() => {
       dispatch(createLists());
   }, [dispatch])
+  
   return (
     <div className='listWrapper'>
         {list.map((list,index)=>(
             <CardsList
-                listCards={list}
+                listCards={list.arrayList}
                 key={index}
+                title={list.title}
             />
         ))}
     </div>

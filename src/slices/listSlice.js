@@ -15,9 +15,9 @@ const listSlices=createSlice({
             let list=[];
             const {cardQuantityPerList}=dataDefault;
             let count=1;
-            for(let i=0;i<=cardQuantityPerList.length;i++){
+            for(let i=0;i<cardQuantityPerList.length;i++){
                 let persons=[];
-                for(let j=1;j<=cardQuantityPerList[i];j++){
+                for(let j=1;j<cardQuantityPerList[i];j++){
                     const person={
                         id:count,
                         photo:`https://randomuser.me/api/portraits/med/men/${count}.jpg`,
@@ -27,9 +27,18 @@ const listSlices=createSlice({
                     persons.push(person);
                     count++;
                 }
-                list.push(persons);
+                
+                let titleList=faker.company.name();
+                list.push({
+                    idList:i,
+                    title:titleList,
+                    arrayList:persons
+                });
             }
             state.list=list;
+        },
+        getCardById(state,action){
+
         }
     }
 })
