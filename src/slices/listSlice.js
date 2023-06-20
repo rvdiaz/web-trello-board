@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { faker } from '@faker-js/faker';
 import { dataDefault } from "../data/dataDefault";
-import { getCardById } from "../helpers/helpers";
+import { getCardandListById } from "../helpers/helpers";
 
 const initialState = {
     list: [],
@@ -41,12 +41,24 @@ const listSlices=createSlice({
             
         },
         addCardByIds(state,action){
-            const {listIdDrop,cardId}=action.payload;
-            const card=getCardById(cardId,state.list);
+           const {listIdDrop,cardId,position}=action.payload;
+           const {card,list}=getCardandListById(cardId,state.list);
+           const cardList=[...state.list[listIdDrop].arrayList];
+           if(list.id!==listIdDrop){
+            cardList.splice(position,0,card);
+            state.list[listIdDrop].arrayList=cardList;
             
+            const deleteInList=[...state.list[list.id].arrayList];
+            const cardDeletedList=deleteInList.filter(item=>item.id!==cardId);
+            state.list[list.id].arrayList=cardDeletedList;
+            }else if(card.id!==cardId){
+                const aux=cardList.filter(item=>item.id!==cardId);
+                aux.slice(position,0,card);
+                state.list[listIdDrop].arrayList=aux;
+            }
         },
         removeCardById(state,action){
-
+            console.log(action.card);
         }
     }
 })

@@ -3,12 +3,11 @@ import { useDrag } from 'react-dnd';
 import { getRandomNumber } from '../../../helpers/helpers';
 
 import { BodyCard } from './BodyCard';
-import { CardPreview } from './CardPreview';
 import { FooterCard } from './FooterCard';
 import { HeaderCard } from './HeaderCard';
 
 export const Card = (props) => {
-  const {id,photo,name,job}=props;
+  const {id,photo,name,job,idList}=props;
   const [num, setnum] = useState({
     gal:0,
     del:0
@@ -25,7 +24,7 @@ export const Card = (props) => {
 
   const [{ isDragging }, drag] = useDrag(() => ({
     type: "card",
-    item: { id: name },
+    item: { id: id,idList:idList },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
@@ -40,7 +39,6 @@ export const Card = (props) => {
       <HeaderCard job={job}/>
       <BodyCard photo={photo} name={name}/>
       <FooterCard gal={num.gal} del={num.del}/>  
-      <CardPreview isDragging={isDragging}/>
       </div>
     </>
   )

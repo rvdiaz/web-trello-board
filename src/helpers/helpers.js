@@ -11,11 +11,14 @@ export const getRandomNumber=(min, max)=>{
     return Math.ceil(Math.random() * (max - min) + min);
 }
 
-export const getCardById=(id,list)=>{
+export const getCardandListById=(id,list)=>{
     for(let i=0;i<list.length;i++){
         for(let j=0;j<list[i].arrayList.length;j++){
             if(list[i].arrayList[j].id===id){
-                return list[i].arrayList[j];
+                return {
+                    card:list[i].arrayList[j],
+                    list:list[i]
+                };
             }
         }
     }

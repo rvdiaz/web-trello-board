@@ -104,9 +104,6 @@ body,html,#root {
     box-shadow: 1px 1px 1px rgba(0,0,0,.3);
     background-color: #d3d1d1;
     border-radius: 5px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
+    min-height: 150px;
+    margin: 10px 5px;
 }

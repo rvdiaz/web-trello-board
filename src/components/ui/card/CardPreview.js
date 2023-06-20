@@ -1,9 +1,6 @@
 import React from 'react'
 
-export const CardPreview = ({isDragging}) => {
-  if(!isDragging) 
-  return null;
-  
+export const CardPreview = () => {
   return (
     <div className='cardPreview'></div>
   )
