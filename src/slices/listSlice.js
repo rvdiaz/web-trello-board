@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { faker } from '@faker-js/faker';
 import { dataDefault } from "../data/dataDefault";
+import { getCardById } from "../helpers/helpers";
 
 const initialState = {
     list: [],
@@ -30,19 +31,26 @@ const listSlices=createSlice({
                 
                 let titleList=faker.company.name();
                 list.push({
-                    idList:i,
+                    id:i,
                     title:titleList,
                     arrayList:persons
                 });
             }
+           
             state.list=list;
+            
         },
-        getCardById(state,action){
+        addCardByIds(state,action){
+            const {listIdDrop,cardId}=action.payload;
+            const card=getCardById(cardId,state.list);
+            
+        },
+        removeCardById(state,action){
 
         }
     }
 })
 
-export const {createLists} =listSlices.actions;
+export const {createLists,addCardByIds} =listSlices.actions;
 
 export default listSlices.reducer;

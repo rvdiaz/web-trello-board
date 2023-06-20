@@ -15,7 +15,7 @@ body,html,#root {
 }
 .boardContainer {
     background-color: #0079bf;
-    height: 90%;
+    height: 100%;
     width: 100%;
     overflow-x: scroll;
     overflow-y: hidden;
@@ -24,20 +24,21 @@ body,html,#root {
 }
 .listWrapper {
     display: flex;
-    height: 100%;
+    height: 90%;
 }
 .cardWrapper {
-   padding: 0 10px;
-   border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    padding: 0 5px;
+    height: 100%;
+    overflow:hidden;
+    margin: 0 10px;
+    background-color: #e2e4e6;
+    border-radius: 5px;
 }
 .cardContainer{
-    height: 95%;
-    overflow:auto ;
     width: 250px;
-    background-color: #e2e4e6;
-    padding: 0 10px;
-    
+    padding: 0 5px;
+    height: 95%;
+    overflow:auto;
 }
 .cardListTitle {
     background-color: #e2e4e6;

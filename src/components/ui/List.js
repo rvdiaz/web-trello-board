@@ -18,6 +18,7 @@ export const List = () => {
                 listCards={list.arrayList}
                 key={index}
                 title={list.title}
+                id={list.id}
             />
         ))}
     </div>

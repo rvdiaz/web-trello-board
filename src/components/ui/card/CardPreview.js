@@ -1,7 +1,7 @@
 import React from 'react'
 
-export const CardPreview = ({isDrawing}) => {
-  if(!isDrawing) 
+export const CardPreview = ({isDragging}) => {
+  if(!isDragging) 
   return null;
   
   return (

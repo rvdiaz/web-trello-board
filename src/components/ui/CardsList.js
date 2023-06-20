@@ -1,8 +1,9 @@
 import React from 'react'
-import { Card } from './card/Card';
+import { CardDrop } from './card/CardDrop';
 
 export const CardsList = (props) => {
-  const {listCards,title}=props;
+  const {listCards,title,id}=props;
+  console.log(listCards);
   return (
     <div className='cardWrapper'>
         <h2 className='cardListTitle'>
@@ -10,7 +11,7 @@ export const CardsList = (props) => {
         </h2>
         <div className='cardContainer'>
         {listCards.map((card)=>(
-          <Card
+          <CardDrop
             photo={card.photo}
             name={card.name}
             job={card.job}

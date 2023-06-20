@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDrag } from 'react-dnd';
-import { getRandomNumber } from '../../../helpers/getRandomNumbers';
+import { getRandomNumber } from '../../../helpers/helpers';
+
 import { BodyCard } from './BodyCard';
 import { CardPreview } from './CardPreview';
 import { FooterCard } from './FooterCard';
@@ -21,15 +22,15 @@ export const Card = (props) => {
       del:del
     })
   }, [setnum])
-  
+
   const [{ isDragging }, drag] = useDrag(() => ({
-    type: "image",
-    item: { id: id },
+    type: "card",
+    item: { id: name },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),
   }));
-  
+
   return (
     <>
       <div 
@@ -39,7 +40,7 @@ export const Card = (props) => {
       <HeaderCard job={job}/>
       <BodyCard photo={photo} name={name}/>
       <FooterCard gal={num.gal} del={num.del}/>  
-      <CardPreview isDrawing={isDragging}/>
+      <CardPreview isDragging={isDragging}/>
       </div>
     </>
   )

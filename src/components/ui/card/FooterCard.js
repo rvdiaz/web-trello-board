@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getArrayRandom } from '../../../helpers/getArrayRandom';
+import { getArrayRandom } from '../../../helpers/helpers';
 import { ProfilesCards } from './ProfilesCards';
 
 export const FooterCard = (props) => {
